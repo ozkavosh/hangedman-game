@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'Omori';
+    src: url('../utils/fonts/OMORI_GAME2.ttf');
+}
+
+*{
+    font-family: 'Omori';
+}
+
+.main{
+    min-height: 100vh;
+    background-color: black;
+}
+
+.inputTry{
+    border: 2px solid white;
+    background: none;
+    outline: none;
+    color: white;
+}
+
+.btnTry{
+    background: none;
+}
+
+.hand{
+    animation: moveRight 1s linear infinite;
+}
+
+@keyframes moveRight{
+    0%{
+        transform: translateX(-0.1rem);
+    }
+    50%{
+        transform: translateX(0.1rem);
+    }
+    100%{
+        transform: translateX(-0.1rem);
+    }
+}

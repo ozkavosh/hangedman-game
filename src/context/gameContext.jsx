@@ -8,7 +8,8 @@ const useGameContext = () => {
 };
 
 const GameContextProvider = ({ children }) => {
-  const [currentWord, setCurrentWord] = useState("");
+  const [currentWord, setCurrentWord] = useState(words[Math.round(Math.random() * (words.length - 1))]);
+  const [tried, setTried] = useState([]);
 
   const generateWord = () => {
     let randomWord = words[Math.round(Math.random() * (words.length - 1))];
@@ -20,7 +21,7 @@ const GameContextProvider = ({ children }) => {
   };
 
   return (
-    <GameContext.Provider value={{ currentWord, generateWord }}>
+    <GameContext.Provider value={{ currentWord, tried, generateWord, setTried }}>
       {children}
     </GameContext.Provider>
   );
